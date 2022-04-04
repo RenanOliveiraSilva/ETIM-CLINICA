@@ -15,7 +15,7 @@
         <div class = "container">
             <h1>Formulário Cadastro</h1>
             <div class="row">
-                <form class="col s12">
+                <form class="col s12" action="medico.controller.php?acao=inserir" method="post">
                     <div class="row">
                         <div class="input-field col s12 m12 l12">
                             <input id="nome" type="text" name="nome" class="validate">
@@ -32,6 +32,8 @@
                             <label for="senha">Senha</label>
                         </div>
                     </div>
+
+
                     <input type="hidden" name="id" >
                     <input type="hidden" name="id_esp">
                     <input type="submit" a class="waves-effect waves-light btn" name="submit" value="Enviar">
@@ -39,6 +41,8 @@
             </div>
         </div>
         <!--Import jQuery before materialize.js-->
+
+
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
         </body>

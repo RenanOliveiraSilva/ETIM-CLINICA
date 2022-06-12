@@ -1,9 +1,7 @@
 <?php
-class Medico{
+class Especialidade{
 	private $id;
-	private $nome;
-	private $email;
-	private $senha;
+	private $especialidade;
 	
 	public function __set($atributo,$valor){
 		$this->$atributo = $valor;

@@ -5,6 +5,7 @@ require_once 'service/especialidade.service.php';
 
 @$acaoEsp = isset($_GET['acaoEsp'])?$_GET['acaoEsp']:$acaoEsp;
 @$id = isset($_GET['id'])?$_GET['id']:$id;
+echo $id;
 
 if($acaoEsp=='inserir'){
 	$especialidade = new Especialidade();
@@ -32,12 +33,14 @@ if($acaoEsp=='inserir'){
 }else if($acaoEsp=='alterar'){
 	$especialidade = new Especialidade();
 	$especialidade->__set('nome',$_POST['nome']);
-	$especialidade->__set('id', $id);
+	$especialidade->__set('id', $_POST['id']);
+
 	$conexao = new Conexao();
 	
 	$especialidadeService = new EspecialidadeService($especialidade, $conexao);
 	$especialidadeService->alterar();
 	header('location: index.php?link=3');
+
 }else if($acaoEsp=='remover'){
 	$especialidade = new Especialidade();
 	$especialidade->__set('id',$_POST['id']);

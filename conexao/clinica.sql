@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jun-2022 às 14:07
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 14-Jun-2022 às 01:21
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `especialidade` (
   `id` int(11) NOT NULL,
-  `especialidade` varchar(50) NOT NULL
+  `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `especialidade`
 --
 
-INSERT INTO `especialidade` (`id`, `especialidade`) VALUES
-(1, 'Cardiologista');
+INSERT INTO `especialidade` (`id`, `nome`) VALUES
+(1, 'Cardiologista'),
+(2, 'Clínico Geral');
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de tabela `especialidade`
 --
 ALTER TABLE `especialidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `medico`

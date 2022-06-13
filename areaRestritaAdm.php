@@ -71,9 +71,9 @@
 		<?php foreach($especialidade as $indice => $especialidade){?>
         <tbody>
           <tr>
-            <td><?= $especialidade->especialidade;?></td>
-            <td><a href='index.php?link=5&metodo=alterar&id=<?= $paciente->id;?>'><i class="material-icons">create</i></a></td>
-            <td><a href='index.php?link=5&metodo=excluir&id=<?= $paciente->id;?>'><i class="material-icons">delete</i></a></td>
+            <td><?= $especialidade->nome;?></td>
+            <td><a href='index.php?link=5&metodo=alterar&id=<?= $especialidade->id;?>'><i class="material-icons">create</i></a></td>
+            <td><a href='index.php?link=5&metodo=excluir&id=<?= $especialidade->id;?>'><i class="material-icons">delete</i></a></td>
           </tr>
          </tbody>
 		<?php } ?>

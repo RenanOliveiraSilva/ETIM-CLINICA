@@ -8,7 +8,7 @@ require_once 'service/especialidade.service.php';
 
 if($acaoEsp=='inserir'){
 	$especialidade = new Especialidade();
-	$especialidade->__set('especialidade',$_POST['especialidade']);
+	$especialidade->__set('nome',$_POST['nome']);
 
 	$conexao = new Conexao();
 	
@@ -31,8 +31,8 @@ if($acaoEsp=='inserir'){
 	
 }else if($acaoEsp=='alterar'){
 	$especialidade = new Especialidade();
-	$especialidade->__set('especialidade',$_POST['especialidade']);
-	
+	$especialidade->__set('nome',$_POST['nome']);
+	$especialidade->__set('id', $id);
 	$conexao = new Conexao();
 	
 	$especialidadeService = new EspecialidadeService($especialidade, $conexao);

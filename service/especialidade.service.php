@@ -8,19 +8,19 @@ class EspecialidadeService{
 		$this->conexao = $conexao->conectar();
 	}
 	public function inserir(){
-		$query = 'insert into especialidade (especialidade) values (?)';
+		$query = 'insert into especialidade (nome) values (?)';
 		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(1,$this->especialidade->__get('especialidade'));
+		$stmt->bindValue(1,$this->especialidade->__get('nome'));
 		$stmt->execute();	
 	}
 	public function recuperar(){
-		$query = 'select id, especialidade from especialidade';
+		$query = 'select id, nome from especialidade';
 		$stmt= $this->conexao->prepare($query);
 		$stmt->execute();
 		return $stmt->fetchALL(PDO::FETCH_OBJ);
 	}
 	public function recuperarEspecialidade($id){
-		$query = 'select id, especialidade
+		$query = 'select id, nome
 		from especialidade where id = ?';
 		$stmt= $this->conexao->prepare($query);
 		$stmt->bindValue(1,$id);
@@ -28,10 +28,10 @@ class EspecialidadeService{
 		return $stmt->fetchALL(PDO::FETCH_OBJ);
 	}
 	public function alterar(){
-		$query = 'update especialidade set especialidade=?
-		where id = ?';
+		$query = 'update especialidade set nome=? where id=?';
 		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(1,$this->especialidade->__get('especialidade'));
+		$stmt->bindValue(1,$this->especialidade->__get('nome'));
+		$stmt->bindValue(2,$this->especialidade->__get('id'));
 		
 		$stmt->execute();	
 	}

@@ -1,7 +1,7 @@
 <?php
 class Especialidade{
 	private $id;
-	private $especialidade;
+	private $nome;
 	
 	public function __set($atributo,$valor){
 		$this->$atributo = $valor;

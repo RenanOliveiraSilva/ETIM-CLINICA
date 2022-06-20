@@ -1,11 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 20-Jun-2022 às 15:10
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
+=======
+-- Tempo de geração: 14-Jun-2022 às 01:21
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,8 +43,13 @@ CREATE TABLE `especialidade` (
 --
 
 INSERT INTO `especialidade` (`id`, `nome`) VALUES
+<<<<<<< HEAD
 (9, 'Cardiologista'),
 (10, 'Otorrinolaringologista');
+=======
+(1, 'Cardiologista'),
+(2, 'Clínico Geral');
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
 
 -- --------------------------------------------------------
 
@@ -111,7 +122,11 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de tabela `especialidade`
 --
 ALTER TABLE `especialidade`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
 
 --
 -- AUTO_INCREMENT de tabela `medico`

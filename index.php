@@ -1,3 +1,8 @@
+<?php
+	session_start();
+?>
+
+
 <!DOCTYPE html>
   <html>
     <head>
@@ -9,11 +14,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-		<style>
-			body {
-				background-color: darkgray;
-			}
-		</style>
+
 
 
     </head>
@@ -24,9 +25,11 @@
 		<div class="nav-wrapper blue">
 		<a href="#" class="brand-logo">Logo</a>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="sass.html">Sass</a></li>
-			<li><a href="badges.html">Components</a></li>
-			<li><a href="collapsible.html">JavaScript</a></li>
+			<li><a href="index.php?link=2">Médico</a></li>
+			<li><a href="index.php?link=5">Especialidade</a></li>
+			<li><a href="index.php?link=4">Paciente</a></li>
+			<li><a href="index.php?link=3">Restrita</a></li>
+			<li><a href="index.php?link=6">Entrar</a></li>
 		</ul>
 		</div>
 	</nav>
@@ -40,7 +43,9 @@
 			$pag[2]='formMedico.php';
 			$pag[3]='areaRestritaAdm.php';
 			$pag[4]='formPaciente.php';
-			$pag[5]='formEspecialidade.php';			
+			$pag[5]='formEspecialidade.php';
+			$pag[6]='formLoginMedico.php';	
+			$pag[7]='medico.controller.php';	
 			
 		if(!empty($link)){
 			if(file_exists($pag[$link])){

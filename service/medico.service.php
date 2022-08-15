@@ -46,14 +46,15 @@ class MedicoService{
 		$stmt->bindValue(1,$this->medico->__get('id'));	
 		$stmt->execute();	
 	}
-	public function recuperarLogin($email, $senha){
-		$query = 'select * from medico where email = ? and senha = ?';
-		$stmt = $this->conexao->prepare($query);
-		$stmt->bindValue(1, $email);
-		$stmt->bindValue(2, $senha);
-
-		return $stmt->fetchAll(PDO::FETCH_OBJ);
-
+	public function recuperarLogin($email,$senha){
+		$query = 'select * from medico
+				  where email = ? and senha=?';
+		$stmt=$this->conexao->prepare($query);
+		$stmt->bindValue(1,$email);
+		$stmt->bindValue(2,$senha);
+		$stmt->execute();	
+		
+		return $stmt->fetchALL(PDO::FETCH_OBJ);
 	}
 	
 	

@@ -1,5 +1,4 @@
 <?php
-
 require_once 'conexao/conexao.php'; 
 require_once 'model/medico.model.php'; 
 require_once 'service/medico.service.php'; 
@@ -53,32 +52,34 @@ if($acao=='inserir'){
 	$medicoService = new MedicoService($medico, $conexao);
 	$medicoService->remover();
 	header('location: index.php?link=3');
-} else if ($acao ==  "recuperarLogin") {
-	$medico = new Medico();
-	$conexao = new Conexao();
-	
-	$email = $_POST['email'];
-	$senha = $_POST['senha'];	
 
-	$medicoService = new MedicoService($medico, $conexao);
-	$medico = $medicoService->recuperarLogin($email, $senha);
-
-	foreach ($medico as $indice => $med) {
-
+}else if($acao == 'recuperarLogin'){
+		$medico = new Medico();
+		$conexao = new Conexao();
+		
+		$email = $_POST['email'];
+		$senha = $_POST['senha'];
+		
+		$medicoService = new MedicoService($medico, $conexao);
+		$medico= $medicoService->recuperarLogin($email, $senha);
+		
+		 foreach($medico as $indice => $med){
+			
+		 }
+		if(!isset($med->email)){
+			echo '
+				
+				<script>alert("Médico com email desconhecido");</script>
+				<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?link=6">
+			';
+		}else{
+			$_SESSION['medicoLogado']=$med->nome;
+			$_SESSION['emailLogado']=$med->email;
+			$_SESSION['idLogado']=$med->id;
+			header('location: index.php');
+		}
+	}else if($acao == 'sair'){
+		session_destroy();
+		header('location: index.php');
 	}
-
-	if (!isset($med->email)) {
-		echo '
-			<script>alert("Médico com email desconhecido");</script>
-			<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=formLoginMedico.php">
-		';
-	} else {
-		$_SESSION['medicoLogado']=$med->nome;
-		$_SESSION['emailLogado']=$med->email;
-		$_SESSION['idLogado']=$med->id;
-		header(' location: index.php');
-	}
-
-}
-
 ?>

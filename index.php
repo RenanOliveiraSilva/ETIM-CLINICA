@@ -22,17 +22,21 @@
     <body>
 	<!--dinamico -->
 	<nav>
-		<div class="nav-wrapper blue">
-		<a href="#" class="brand-logo">Logo</a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="index.php?link=2">Médico</a></li>
-			<li><a href="index.php?link=5">Especialidade</a></li>
-			<li><a href="index.php?link=4">Paciente</a></li>
-			<li><a href="index.php?link=3">Restrita</a></li>
-			<li><a href="index.php?link=6">Entrar</a></li>
-		</ul>
-		</div>
-	</nav>
+    <div class="nav-wrapper purple">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <?php if(isset($_SESSION['medicoLogado'])){?>
+        <li><a href="index.php?link=2">Médico</a></li>
+        <li><a href="index.php?link=5">Especialidade</a></li>
+        <li><a href="index.php?link=4">Paciente</a></li>
+        <li><a href="index.php?link=3">Restrita</a></li>
+        <li><a href="index.php?link=7&acao=sair"><?= $_SESSION['medicoLogado'] ?></a></li>
+          <?php } else{?>
+        <li><a href="index.php?link=6">Entrar</a></li>
+            <?php }?>
+      </ul>
+    </div>
+  </nav>
 
 	<div class="container">
 
@@ -58,7 +62,7 @@
 		?>
 	</div>
 
-		<footer class="page-footer blue">
+		<footer class="page-footer purple">
 			<div class="container">
 				<div class="row">
 				<div class="col l6 s12">

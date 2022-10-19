@@ -5,7 +5,7 @@ require_once 'service/especialidade.service.php';
 
 @$acaoEsp = isset($_GET['acaoEsp'])?$_GET['acaoEsp']:$acaoEsp;
 @$id = isset($_GET['id'])?$_GET['id']:$id;
-echo $id;
+
 
 if($acaoEsp=='inserir'){
 	$especialidade = new Especialidade();

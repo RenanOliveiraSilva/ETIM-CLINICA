@@ -9,6 +9,8 @@
 		$nome=$medico->nome; 
 		$email=$medico->email; 
 		$senha=$medico->senha; 
+		$imagem=$medico->imagem;
+		$_SESSION['imagem']=$imagem;
 	 }
 	}
 ?>
@@ -30,6 +32,16 @@
 				  <input id="senha" type="password" name="senha" class="validate" value="<?php if(isset($senha)){echo $senha;}else{echo '';}?>">
 				  <label for="senha">Senha</label>
 				</div>
+				<div class="input-field col s6 m6 l6">
+				  <input id="imagem" type="file" name="imagem" class="validate" value="<?php if(isset($imagem)){echo $imagem;}else{echo '';}?>">
+				  <label for="imagem">Foto</label>
+				</div>
+				<?php
+					if (isset($medico->imagem))
+					{
+						echo '<img scr="imagem/'.$medico->imagem.'" width="100" height="100">';
+					}
+				?>
 			  </div>
 			  <input type="hidden" name="id" value="<?php if(isset($id)){echo $id;}else{echo '';}?>">
 			  <input type="hidden" name="id_esp">

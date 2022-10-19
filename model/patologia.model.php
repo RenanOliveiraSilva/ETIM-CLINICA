@@ -1,11 +1,9 @@
 <?php
-class Medico{
+class Patologia{
 	private $id;
+	private $cid;
 	private $nome;
-	private $email;
-	private $senha;
-	private $imagem;
-
+	
 	public function __set($atributo,$valor){
 		$this->$atributo = $valor;
 		return $this;
@@ -15,9 +13,5 @@ class Medico{
 	}
 	
 }
-/*$me = new Medico();
-$me->__set('id',1)->__set('nome','andre');
-echo $me->__get('id');
-echo $me->__get('nome');*/
 
 ?>

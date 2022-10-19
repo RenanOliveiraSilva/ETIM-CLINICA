@@ -1,11 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Tempo de geração: 29-Ago-2022 às 15:17
+=======
+<<<<<<< HEAD
+-- Tempo de geração: 20-Jun-2022 às 15:10
+>>>>>>> 95a535b6c9cc15bb32e4db85f19d2cd45179cfb9
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
+=======
+-- Tempo de geração: 14-Jun-2022 às 01:21
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.11
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +47,7 @@ CREATE TABLE `especialidade` (
 --
 
 INSERT INTO `especialidade` (`id`, `nome`) VALUES
+<<<<<<< HEAD
 (9, 'Cardiologista'),
 (10, 'Otorrinolaringologista');
 
@@ -58,6 +69,15 @@ CREATE TABLE `medesp` (
 
 INSERT INTO `medesp` (`id`, `id_medico`, `id_especialidade`) VALUES
 (1, 5, 9);
+=======
+<<<<<<< HEAD
+(9, 'Cardiologista'),
+(10, 'Otorrinolaringologista');
+=======
+(1, 'Cardiologista'),
+(2, 'Clínico Geral');
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
+>>>>>>> 95a535b6c9cc15bb32e4db85f19d2cd45179cfb9
 
 -- --------------------------------------------------------
 
@@ -98,7 +118,12 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`id`, `nome`, `endereco`, `cpf`) VALUES
+<<<<<<< HEAD
 (1, 'Vitória', 'Rua 5', '58746887765');
+=======
+(1, 'Vitória', 'Rua 5', '58746887765'),
+(2, 'Renan', 'Rua 7', '12365498778');
+>>>>>>> 95a535b6c9cc15bb32e4db85f19d2cd45179cfb9
 
 --
 -- Índices para tabelas despejadas
@@ -138,6 +163,7 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de tabela `especialidade`
 --
 ALTER TABLE `especialidade`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
@@ -145,6 +171,13 @@ ALTER TABLE `especialidade`
 --
 ALTER TABLE `medesp`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+=======
+<<<<<<< HEAD
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> b0abe795e8727a9a074d8e687d01e6c695e49f74
+>>>>>>> 95a535b6c9cc15bb32e4db85f19d2cd45179cfb9
 
 --
 -- AUTO_INCREMENT de tabela `medico`
